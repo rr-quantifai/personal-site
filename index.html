@@ -55,66 +55,41 @@
     animation: drawLine 1.6s cubic-bezier(0.16,1,0.3,1) 0.9s both;
   }
 
-  /* ── Fractions ── */
-  .fracs {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
+  /* ── Gita ── */
+  .gita {
     margin-bottom: 40px;
     opacity: 0;
     animation: wipeIn 1.8s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
   }
-  .frac { display: flex; flex-direction: column; width: fit-content; }
-  .frac-num {
+  .g-deva {
+    font-family: Georgia, 'Times New Roman', serif;
     font-size: 15px;
-    font-weight: 500;
+    line-height: 1.7;
     color: rgba(26,43,30,0.80);
-    letter-spacing: 0.01em;
-    line-height: 1;
-    padding-bottom: 8px;
+    letter-spacing: 0.02em;
   }
-  .frac-rule { height: 1px; width: 100%; background: #00b86b; }
-  .frac-den {
+  .g-shloka { margin-bottom: 20px; }
+  .g-principle { margin-bottom: 20px; }
+  .g-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #00b86b;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+  .g-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(26,43,30,0.45);
+    line-height: 1.85;
+    text-align: justify;
+  }
+  .g-attr {
     font-size: 11px;
     font-weight: 400;
-    color: rgba(26,43,30,0.30);
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    line-height: 1;
-    padding-top: 7px;
-  }
-
-  /* ── Statement rows ── */
-  .stmt-row { display: flex; align-items: center; gap: 10px; }
-  .stmt-from {
-    font-size: 13.5px;
-    color: rgba(26,43,30,0.36);
-    font-weight: 300;
-    white-space: nowrap;
-    line-height: 1;
-  }
-  .stmt-op {
-    font-size: 13.5px;
-    color: #00b86b;
-    font-weight: 400;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-  .stmt-to {
-    font-size: 13.5px;
-    color: rgba(26,43,30,0.65);
-    font-weight: 500;
-    line-height: 1;
-  }
-
-  /* ── Equations ── */
-  .eqs {
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: wipeIn 1.8s cubic-bezier(0.16,1,0.3,1) 1.3s forwards;
+    color: rgba(26,43,30,0.30);
   }
 
   /* ── Jobs quote ── */
@@ -132,7 +107,6 @@
     text-align: justify;
     margin-bottom: 20px;
   }
-  .jobs-q1 { color: rgba(26,43,30,0.65); font-weight: 500; }
   .jobs-attr {
     font-size: 11px;
     font-weight: 400;
@@ -252,40 +226,30 @@
   <h1><span class="fn">Ritwik</span> <span class="ln">Rudra</span></h1>
   <div class="name-sep" aria-hidden="true"></div>
 
-  <!-- Fractions -->
-  <div class="fracs">
-    <div class="frac">
-      <span class="frac-num">Effort</span>
-      <div class="frac-rule" id="effort-rule"></div>
-      <span class="frac-den" id="effort-den">Result</span>
+  <!-- Gita -->
+  <div class="gita">
+    <div class="g-shloka">
+      <p class="g-deva">कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।</p>
+      <p class="g-deva">मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥</p>
     </div>
-    <div class="frac">
-      <span class="frac-num">Knowledge</span>
-      <div class="frac-rule"></div>
-      <span class="frac-den">Money</span>
+    <div class="g-principle">
+      <p class="g-title">Focus entirely on the input</p>
+      <p class="g-desc">You only have control over your effort, intent, and execution — that is your true domain</p>
     </div>
-    <div class="frac">
-      <span class="frac-num">Perseverance</span>
-      <div class="frac-rule"></div>
-      <span class="frac-den">Fame</span>
+    <div class="g-principle">
+      <p class="g-title">Surrender control over the output</p>
+      <p class="g-desc">Results are shaped by external factors — so let go. Expectation only breeds anxiety</p>
     </div>
+    <div class="g-principle">
+      <p class="g-title">Detach your ego from results</p>
+      <p class="g-desc">Never view yourself as the sole cause of success, nor let your identity be crushed by failure</p>
+    </div>
+    <div class="g-principle">
+      <p class="g-title">Avoid the trap of nihilism</p>
+      <p class="g-desc">Not having control over the outcome should never stop you from trying</p>
+    </div>
+    <p class="g-attr">Bhagavad Gita</p>
   </div>
-
-  <!-- Equations -->
-  <div class="eqs">
-    <div class="stmt-row">
-      <span class="stmt-from">Discipline</span>
-      <span class="stmt-op">=</span>
-      <span class="stmt-to">Mental strength</span>
-    </div>
-    <div class="stmt-row">
-      <span class="stmt-from">Live light</span>
-      <span class="stmt-op">→</span>
-      <span class="stmt-to">Move fast</span>
-    </div>
-  </div>
-
-
 
   <div class="sep" aria-hidden="true"></div>
 
@@ -310,10 +274,7 @@
       <circle cx="233" cy="22" r="3.2" fill="#f9f7f2"/><circle cx="233" cy="22" r="2" fill="rgba(26,43,30,0.20)"/>
       <circle cx="271" cy="22" r="3.2" fill="#f9f7f2"/><circle cx="271" cy="22" r="2" fill="rgba(26,43,30,0.13)"/>
     </svg>
-    <p class="jobs-quote">
-      <span class="jobs-q1">You can't connect the dots looking forward; you can only connect them looking backwards</span>
-      So you have to trust that the dots will somehow connect in your future
-    </p>
+    <p class="jobs-quote">You can't connect the dots looking forward — only looking back. So trust that they will somehow connect in your future</p>
     <p class="jobs-attr">Steve Jobs</p>
   </div>
 
@@ -363,14 +324,8 @@
 </div>
 
 <script>
-  // Effort rule width match
-  const den  = document.getElementById('effort-den');
-  const rule = document.getElementById('effort-rule');
-  rule.style.width = den.offsetWidth + 'px';
-
-  // Lightbox
   const srcs = Array.from(document.querySelectorAll('.fs-frame img')).map(img => img.src);
-  let lbIdx  = 0;
+  let lbIdx = 0;
 
   function openLb(i) {
     lbIdx = i;
@@ -387,7 +342,6 @@
     document.getElementById('lb-img').src = srcs[lbIdx];
   }
 
-  // Keyboard navigation
   document.addEventListener('keydown', e => {
     if (!document.getElementById('lb').classList.contains('open')) return;
     if (e.key === 'Escape')     closeLb();
@@ -395,7 +349,6 @@
     if (e.key === 'ArrowLeft')  stepLb(-1);
   });
 
-  // Scroll navigation inside lightbox
   let scrollAcc = 0, scrollTimer;
   document.getElementById('lb').addEventListener('wheel', e => {
     e.preventDefault();
