@@ -6,7 +6,7 @@
 <title>Ritwik Rudra</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Betania+Patmos+GDL&family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Betania+Patmos+GDL&family=WDXL+Lubrifont+TC&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -130,28 +130,10 @@
     text-decoration: none;
   }
 
-  .mantra {
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: wipeIn 1.8s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
-  }
-  .mantra-sent {
-    cursor: pointer;
-    background-color: transparent;
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    transition: opacity 0.55s ease-in-out, color 0.55s ease-in-out, background-color 0.55s ease-in-out;
-  }
-  .mantra-sent[data-c="primary"]   { color: rgba(26,43,30,0.80); }
-  .mantra-sent[data-c="secondary"] { color: rgba(18,52,30,0.50); }
-  .mantra-dot { color: rgba(26,43,30,0.25); margin: 0 6px; }
-  .mantra-para.dim .mantra-sent { opacity: 0.1; }
-  .mantra-para.dim .mantra-sent.on { opacity: 1; color: #fff; background-color: var(--green); }
-
   .jobs {
     margin-bottom: 40px;
     opacity: 0;
-    animation: wipeIn 1.8s cubic-bezier(0.16,1,0.3,1) 1.6s forwards;
+    animation: wipeIn 1.8s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
   }
   .jobs-quote {
     font-family: 'Betania Patmos GDL', cursive;
@@ -214,7 +196,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    h1, .fracs, .visual, .mantra, .jobs, .linkedin { opacity: 1; animation: none; }
+    h1, .fracs, .visual, .jobs, .linkedin { opacity: 1; animation: none; }
     .name-sep, .sep { transform: scaleX(1); opacity: 1; animation: none; }
   }
 </style>
@@ -263,13 +245,6 @@
     <p class="bio">Chemically competitive, fitness geek, gamer, golfer, inquisitive child, math and science nerd, <a class="bio-link" href="https://www.youtube.com/@rr-quantifai" target="_blank" rel="noopener">melody purist</a>, numismatist, OCD survivor, pattern sleuth, Pokémon hunter, <a class="bio-link" href="https://github.com/rr-quantifai" target="_blank" rel="noopener">vibe coder</a>, and whiskey chemist</p>
   </div>
 
-  <div class="sep" style="--delay: 1.2s" aria-hidden="true"></div>
-
-  <!-- Mantra -->
-  <div class="mantra">
-    <p class="bio mantra-para" id="mantra-para"></p>
-  </div>
-
   <div class="sep" style="--delay: 1.6s" aria-hidden="true"></div>
 
   <!-- Jobs -->
@@ -296,35 +271,6 @@
 </div>
 
 <script>
-  (function () {
-    const S = [
-      { t: 'Find victory in the process',                                                                                                  c: 'primary'   },
-      { t: 'Physical clutter mirrors mental chaos',                                                                                        c: 'secondary' },
-      { t: 'Sacrifice is the ultimate duty \u2014 duty, the absolute expression of love \u2014 discipline, the final proof of self-love', c: 'primary'   },
-      { t: 'When it\u2019s your time to win \u2014 defeat is impossible',                                                                  c: 'secondary' }
-    ];
-    const p = document.getElementById('mantra-para');
-    S.forEach((s, i) => {
-      const sp = document.createElement('span');
-      sp.className = 'mantra-sent';
-      sp.dataset.c = s.c;
-      sp.textContent = s.t;
-      sp.onclick = () => {
-        const was = sp.classList.contains('on');
-        p.classList.remove('dim');
-        p.querySelectorAll('.mantra-sent').forEach(x => x.classList.remove('on'));
-        if (!was) { p.classList.add('dim'); sp.classList.add('on'); }
-      };
-      p.appendChild(sp);
-      if (i < S.length - 1) {
-        const dot = document.createElement('span');
-        dot.className = 'mantra-dot';
-        dot.textContent = '\u00b7';
-        p.appendChild(dot);
-      }
-    });
-  }());
-
   const srcs = Array.from(document.querySelectorAll('.fs-frame img')).map(img => img.src);
   let lbIdx = 0;
 
